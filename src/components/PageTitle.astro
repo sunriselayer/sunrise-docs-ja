@@ -1,0 +1,43 @@
+---
+// GitBook-style cover banner on the homepage, rendered above the page title.
+import Default from '@astrojs/starlight/components/PageTitle.astro';
+import { Image } from 'astro:assets';
+import cover from '../assets/sunrise-cover.png';
+
+const isHome = Astro.locals.starlightRoute.id === '' || Astro.locals.starlightRoute.id === 'index';
+---
+
+{
+	isHome && (
+		<div class="page-cover">
+			<Image
+				src={cover}
+				alt="Sunrise"
+				widths={[720, 1200, 2400]}
+				sizes="(min-width: 72rem) 45rem, 100vw"
+				loading="eager"
+				fetchpriority="high"
+			/>
+		</div>
+	)
+}
+<Default>
+	<slot />
+</Default>
+
+<style>
+	.page-cover {
+		margin: -1.5rem calc(-1 * var(--sl-content-pad-x)) 0;
+		overflow: hidden;
+		line-height: 0;
+	}
+
+	.page-cover :global(img) {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: min(22rem, 42vw);
+		object-fit: cover;
+		object-position: center;
+	}
+</style>
