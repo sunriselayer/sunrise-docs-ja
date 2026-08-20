@@ -61,6 +61,7 @@ export default defineConfig({
 			],
 			customCss: ['./src/styles/custom.css'],
 			components: {
+				PageTitle: './src/components/PageTitle.astro',
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
 			editLink: {
