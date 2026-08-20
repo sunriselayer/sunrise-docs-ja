@@ -1,0 +1,10 @@
+---
+// Language switcher to the English docs site, followed by Starlight social icons.
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+
+const otherOrigin = 'https://docs.sunriselayer.io';
+const href = `${otherOrigin}${Astro.url.pathname}`;
+---
+
+<a class="language-switch" href={href} lang="en" hreflang="en">English</a>
+<Default><slot /></Default>

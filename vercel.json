@@ -1,0 +1,25 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/home/readme",
+      "destination": "/",
+      "statusCode": 308
+    },
+    {
+      "source": "/:path(.*).md",
+      "destination": "/:path",
+      "statusCode": 308
+    }
+  ]
+}
