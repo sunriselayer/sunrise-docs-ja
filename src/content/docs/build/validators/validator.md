@@ -15,7 +15,7 @@ description: このドキュメントでは、Sunriseチェーンでバリデー
 Sunriseネットワークのバリデーターは、データ可用性（DA）レイヤーのデータを検証する必要があります。これは重要な責任です。設定方法については、[データ可用性レイヤーの証明](/build/validators/data-availability-proof)ガイドを参照してください。
 :::
 
-## Cosmovisorの設定
+## Cosmovisorのセットアップ
 
 メインネットでは、ノードの実行にCosmovisorを使用することを強くお勧めします。Cosmovisorを使用すると、最小限のダウンタイムでチェーンのアップグレードをスムーズに実行できます。
 

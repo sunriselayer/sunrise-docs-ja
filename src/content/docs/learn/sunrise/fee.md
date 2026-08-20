@@ -75,8 +75,8 @@ sequenceDiagram
     SwapModule-->>FeeModule: burned_denomを返す
     FeeModule->>BankKeeper: 焼却を実行（burned_denom）
 
-    note over BribeModule, FeeCollector: 未請求の賄賂の処理
-    BribeModule->>FeeModule: 未請求の賄賂を処理
+    note over BribeModule, FeeCollector: 未請求のブライブの処理
+    BribeModule->>FeeModule: 未請求のブライブを処理
     FeeModule->>FeeCollector: 未請求額を送金
 ```
 

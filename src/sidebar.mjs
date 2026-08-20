@@ -1,152 +1,153 @@
-// Sidebar matching the published GitBook SUMMARY.md.
+// Sidebar matching the published GitBook SUMMARY.md, with Japanese labels.
+// Product names, module names, and network names stay in their original form.
 export const sidebar = [
 	{
-		label: 'Learn',
+		label: '学ぶ',
 		items: [
 			{
 				label: 'Sunrise',
 				items: [
-					{ label: 'Overview', slug: 'learn/sunrise' },
-					{ label: 'Proof of Liquidity', slug: 'learn/sunrise/proof-of-liquidity' },
-					{ label: 'Data Availability', slug: 'learn/sunrise/data-availability' },
-					{ label: 'Liquidity Pool', slug: 'learn/sunrise/liquidity-pool' },
-					{ label: 'Swap', slug: 'learn/sunrise/swap' },
+					{ label: '概要', slug: 'learn/sunrise' },
+					{ label: 'プルーフ・オブ・リクイディティ', slug: 'learn/sunrise/proof-of-liquidity' },
+					{ label: 'データ可用性', slug: 'learn/sunrise/data-availability' },
+					{ label: '流動性プール', slug: 'learn/sunrise/liquidity-pool' },
+					{ label: 'スワップ', slug: 'learn/sunrise/swap' },
 					{
-						label: 'Liquidity Incentive',
+						label: '流動性インセンティブ',
 						items: [
-							{ label: 'Overview', slug: 'learn/sunrise/liquidity-incentive' },
-							{ label: 'Gauges Voting', slug: 'learn/sunrise/liquidity-incentive/gauges-voting' },
-							{ label: 'Bribes', slug: 'learn/sunrise/liquidity-incentive/bribes' },
+							{ label: '概要', slug: 'learn/sunrise/liquidity-incentive' },
+							{ label: 'ゲージ投票', slug: 'learn/sunrise/liquidity-incentive/gauges-voting' },
+							{ label: 'ブライブ', slug: 'learn/sunrise/liquidity-incentive/bribes' },
 						],
 					},
-					{ label: 'TokenConverter', slug: 'learn/sunrise/token-converter' },
-					{ label: 'Fee', slug: 'learn/sunrise/fee' },
-					{ label: 'Lockup Account', slug: 'learn/sunrise/lockup' },
-					{ label: 'Non-Voting Delegation', slug: 'learn/sunrise/shareclass' },
+					{ label: 'トークンコンバーター', slug: 'learn/sunrise/token-converter' },
+					{ label: '手数料', slug: 'learn/sunrise/fee' },
+					{ label: 'ロックアップアカウント', slug: 'learn/sunrise/lockup' },
+					{ label: '非投票型デリゲーション', slug: 'learn/sunrise/shareclass' },
 					{ label: 'Stable', slug: 'learn/sunrise/stable' },
 				],
 			},
 			{
 				label: 'RISE',
 				items: [
-					{ label: 'Overview', slug: 'learn/rise' },
-					{ label: 'Allocations', slug: 'learn/rise/allocation' },
+					{ label: '概要', slug: 'learn/rise' },
+					{ label: 'アロケーション', slug: 'learn/rise/allocation' },
 				],
 			},
 			{ label: 'USDrise', slug: 'learn/usdrise' },
 			{ label: 'Gluon', slug: 'learn/gluon' },
 			{ label: 'GLU', slug: 'learn/glu' },
 			{
-				label: 'Thesis',
+				label: '構想',
 				items: [
-					{ label: 'Overview', slug: 'learn/thesis' },
-					{ label: 'App chain thesis', slug: 'learn/thesis/app-chain-thesis' },
-					{ label: 'Interoperability', slug: 'learn/thesis/interoperability' },
+					{ label: '概要', slug: 'learn/thesis' },
+					{ label: 'アプリチェーン構想', slug: 'learn/thesis/app-chain-thesis' },
+					{ label: '相互運用性', slug: 'learn/thesis/interoperability' },
 				],
 			},
 			{
-				label: 'App',
+				label: 'アプリ',
 				items: [
-					{ label: 'Overview', slug: 'learn/sunrise-app' },
-					{ label: 'Liquidity Pool', slug: 'learn/sunrise-app/liquidity-pool' },
-					{ label: 'Swap', slug: 'learn/sunrise-app/swap' },
-					{ label: 'Governance', slug: 'learn/sunrise-app/gov' },
-					{ label: 'Lockup', slug: 'learn/sunrise-app/lockup' },
-					{ label: 'Point Program', slug: 'learn/sunrise-app/point-program' },
-					{ label: 'Fee', slug: 'learn/sunrise-app/fee' },
+					{ label: '概要', slug: 'learn/sunrise-app' },
+					{ label: '流動性プール', slug: 'learn/sunrise-app/liquidity-pool' },
+					{ label: 'スワップ', slug: 'learn/sunrise-app/swap' },
+					{ label: 'ガバナンス', slug: 'learn/sunrise-app/gov' },
+					{ label: 'ロックアップ', slug: 'learn/sunrise-app/lockup' },
+					{ label: 'ポイントプログラム', slug: 'learn/sunrise-app/point-program' },
+					{ label: '手数料', slug: 'learn/sunrise-app/fee' },
 				],
 			},
 		],
 	},
 	{
-		label: 'Build',
+		label: '構築',
 		items: [
 			{
-				label: 'Validators',
+				label: 'バリデーター',
 				items: [
-					{ label: 'Overview', slug: 'build/validators' },
-					{ label: 'How to Become a Validator', slug: 'build/validators/validator' },
-					{ label: 'Proof of Data Availability', slug: 'build/validators/data-availability-proof' },
-					{ label: 'Self Delegation', slug: 'build/validators/self-delegation' },
+					{ label: '概要', slug: 'build/validators' },
+					{ label: 'バリデーターになる方法', slug: 'build/validators/validator' },
+					{ label: 'データ可用性の証明', slug: 'build/validators/data-availability-proof' },
+					{ label: '自己委任', slug: 'build/validators/self-delegation' },
 				],
 			},
 			{
-				label: 'L2 Blockchains',
+				label: 'L2ブロックチェーン',
 				items: [
-					{ label: 'Overview', slug: 'build/l2-blockchains' },
+					{ label: '概要', slug: 'build/l2-blockchains' },
 					{
 						label: 'Rollkit',
 						items: [
-							{ label: 'Overview', slug: 'build/l2-blockchains/rollkit' },
+							{ label: '概要', slug: 'build/l2-blockchains/rollkit' },
 							{ label: 'Sunrise Data', slug: 'build/l2-blockchains/rollkit/sunrise-data' },
-							{ label: 'Rollkit L2 Chain', slug: 'build/l2-blockchains/rollkit/rollkit' },
+							{ label: 'Rollkit L2チェーン', slug: 'build/l2-blockchains/rollkit/rollkit' },
 						],
 					},
 					{
 						label: 'OP Stack',
 						items: [
-							{ label: 'Overview', slug: 'build/l2-blockchains/optimism' },
+							{ label: '概要', slug: 'build/l2-blockchains/optimism' },
 							{ label: 'Sunrise Data', slug: 'build/l2-blockchains/optimism/sunrise-data' },
-							{ label: 'OP Stack L2 Chain', slug: 'build/l2-blockchains/optimism/op-stack' },
+							{ label: 'OP Stack L2チェーン', slug: 'build/l2-blockchains/optimism/op-stack' },
 						],
 					},
 				],
 			},
-			{ label: 'Client', slug: 'build/client' },
+			{ label: 'クライアント', slug: 'build/client' },
 		],
 	},
 	{
-		label: 'Run a Sunrise Node',
+		label: 'ノードの運用',
 		items: [
 			{
-				label: 'Networks',
+				label: 'ネットワーク',
 				items: [
-					{ label: 'Overview', slug: 'run-a-sunrise-node/networks' },
-					{ label: 'Mainnet', slug: 'run-a-sunrise-node/networks/mainnet' },
-					{ label: 'Testnet', slug: 'run-a-sunrise-node/networks/testnet' },
+					{ label: '概要', slug: 'run-a-sunrise-node/networks' },
+					{ label: 'メインネット', slug: 'run-a-sunrise-node/networks/mainnet' },
+					{ label: 'テストネット', slug: 'run-a-sunrise-node/networks/testnet' },
 				],
 			},
 			{
-				label: 'Types of Nodes',
+				label: 'ノードの種類',
 				items: [
-					{ label: 'Overview', slug: 'run-a-sunrise-node/types' },
+					{ label: '概要', slug: 'run-a-sunrise-node/types' },
 					{
-						label: 'Consensus',
+						label: 'コンセンサス',
 						items: [
-							{ label: 'Overview', slug: 'run-a-sunrise-node/types/consensus' },
+							{ label: '概要', slug: 'run-a-sunrise-node/types/consensus' },
 							{
-								label: 'Full Consensus Node',
+								label: 'フルコンセンサスノード',
 								slug: 'run-a-sunrise-node/types/consensus/full-consensus-node',
 							},
 							{
-								label: 'Validator Node (Genesis)',
+								label: 'バリデーターノード（ジェネシス）',
 								slug: 'run-a-sunrise-node/types/consensus/genesis-validator',
 							},
 							{
-								label: 'Validator Node',
+								label: 'バリデーターノード',
 								slug: 'run-a-sunrise-node/types/consensus/validator-node',
 							},
 							{
-								label: 'Setup Cosmovisor',
+								label: 'Cosmovisorのセットアップ',
 								slug: 'run-a-sunrise-node/types/consensus/setup-cosmovisor',
 							},
 						],
 					},
-					{ label: 'IBC Relayers', slug: 'run-a-sunrise-node/types/ibc-relayers' },
+					{ label: 'IBCリレーヤー', slug: 'run-a-sunrise-node/types/ibc-relayers' },
 				],
 			},
 			{
-				label: 'Resources',
+				label: 'リソース',
 				items: [
-					{ label: 'Overview', slug: 'run-a-sunrise-node/resources' },
-					{ label: 'Upgrade', slug: 'run-a-sunrise-node/resources/upgrade' },
-					{ label: 'Environment', slug: 'run-a-sunrise-node/resources/environment' },
+					{ label: '概要', slug: 'run-a-sunrise-node/resources' },
+					{ label: 'アップグレード', slug: 'run-a-sunrise-node/resources/upgrade' },
+					{ label: '環境', slug: 'run-a-sunrise-node/resources/environment' },
 				],
 			},
 		],
 	},
 	{
-		label: 'Links',
+		label: 'リンク',
 		items: [
 			{
 				label: 'GitHub',

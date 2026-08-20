@@ -5,7 +5,7 @@ description: x/liquidityincentiveモジュールは、流動性プールへの�
 
 `x/liquidityincentive`モジュールは、流動性プールへの貢献に基づいて報酬を分配することにより、流動性プロバイダーにインセンティブを与えます。エポックベースの報酬システムとゲージ投票メカニズムを使用して、報酬を動的に割り当てます。このモジュールは、持続可能な流動性供給を保証すると同時に、ユーザーがゲージ投票を通じてガバナンスに参加できるようにします。
 
-賄賂機能の詳細については、[賄賂](/learn/sunrise/liquidity-incentive/bribes)を参照してください。
+ブライブ機能の詳細については、[ブライブ](/learn/sunrise/liquidity-incentive/bribes)を参照してください。
 
 ## 主な特徴
 
@@ -60,9 +60,9 @@ $$
 ```mermaid
 graph TD
     A{ユーザーA}-->|流動性を提供|B((プールB))
-    A-->|賄賂を登録|C((プールBのゲージ))
+    A-->|ブライブを登録|C((プールBのゲージ))
     D{ユーザー}-->|投票|C
-    C-.->|賄賂を分配|D
+    C-.->|ブライブを分配|D
     C-.->|より多くのvRISEを割り当て|B
     B-.->|vRISEインセンティブを分配|A
 ```
@@ -106,7 +106,7 @@ sequenceDiagram
 | --- | --- | --- | --- |
 | epoch_blocks | 4,320 | ブロック | エポックあたりのブロック数（約12日） |
 | staking_reward_ratio | 0.50 | 比率 | ステーキングに割り当てられるvRISEの比率（50%） |
-| bribe_claim_epochs | 5 | エポック | 賄賂を請求できるエポック数 |
+| bribe_claim_epochs | 5 | エポック | ブライブを請求できるエポック数 |
 
 ### パラメータの詳細
 
@@ -123,9 +123,9 @@ sequenceDiagram
    - 残りの50%は流動性インセンティブに使用されます
 
 3. **bribe_claim_epochs**
-   - 賄賂を請求できる期間をエポック単位で定義します
+   - ブライブを請求できる期間をエポック単位で定義します
    - デフォルト値は5エポックです
-   - この期間が終了すると、賄賂は請求できなくなります
+   - この期間が終了すると、ブライブは請求できなくなります
 
 これらのパラメータは、ガバナンスを通じて更新できます。パラメータの変更はシステムの動作に大きな影響を与える可能性があるため、慎重に検討する必要があります。
 
@@ -136,8 +136,8 @@ sequenceDiagram
 - MsgUpdateParams: モジュールパラメータの更新（ガバナンス操作）
 - MsgStartNewEpoch: 新しいエポックを開始
 - MsgVoteGauge: 報酬分配のためのプールの重みに投票
-- MsgRegisterBribe: 特定のプールとエポックの賄賂を登録
-- MsgClaimBribes: 蓄積された賄賂を請求
+- MsgRegisterBribe: 特定のプールとエポックのブライブを登録
+- MsgClaimBribes: 蓄積されたブライブを請求
 
 ## クエリ
 
@@ -148,10 +148,10 @@ sequenceDiagram
 - Epochs: すべてのエポックを一覧表示
 - Vote: 特定のアドレスの投票情報を取得
 - Votes: すべての投票を一覧表示
-- Bribe: 特定の賄賂の詳細を取得
-- Bribes: オプションのフィルター付きですべての賄賂を一覧表示
-- BribeAllocation: 特定のアドレス、エポック、プールの賄賂配分を取得
-- BribeAllocations: オプションのフィルター付きですべての賄賂配分を一覧表示
+- Bribe: 特定のブライブの詳細を取得
+- Bribes: オプションのフィルター付きですべてのブライブを一覧表示
+- BribeAllocation: 特定のアドレス、エポック、プールのブライブ配分を取得
+- BribeAllocations: オプションのフィルター付きですべてのブライブ配分を一覧表示
 - TallyResult: 次のエポックの集計結果を取得
 
 詳細については、[Github](https://github.com/sunriselayer/sunrise/tree/main/x/liquidityincentive)を参照してください。

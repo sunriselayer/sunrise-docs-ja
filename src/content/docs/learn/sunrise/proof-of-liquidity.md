@@ -128,7 +128,7 @@ Sunriseは、次の仕様でコンセンサスにCometBFT（Tendermint）を使�
 | ガバナンス | ![vRISE](/images/vRISE.svg) vRISE | vRISEはオンチェーンガバナンスとゲージ投票に使用されます |
 | セキュリティ排出量 | ![RISE](/images/RISE.png) RISE | RISEはコンセンサス報酬としてステーカーに分配されます |
 | LP排出量 | ![vRISE](/images/vRISE.svg) vRISE | vRISEはインセンティブとしてLPに分配されます |
-| 手数料 | Any (swapped to [Fee Token](/learn/sunrise/fee)) | RISEは取引手数料として使用されます |
+| 手数料 | 任意（[手数料トークン](/learn/sunrise/fee) にスワップ） | RISEは取引手数料として使用されます |
 
 **凡例:**\
 ![RISE](/images/RISE.png) = RISE\

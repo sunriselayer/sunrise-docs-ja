@@ -1,26 +1,26 @@
 ---
 title: バリデーターノード
-description: バリデーターノードを使用すると、Sunriseネットワークのコンセンサスに参加できます。
+description: バリデーターノードを使うと、Sunrise ネットワークのコンセンサスに参加できます。
 ---
 
-バリデーターノードを使用すると、Sunriseネットワークのコンセンサスに参加できます。
+バリデーターノードを使うと、Sunrise ネットワークのコンセンサスに参加できます。
 
 ## ハードウェア要件
 
-バリデーターノードを実行するために、以下の最低ハードウェア要件が推奨されます。
+バリデーターノードを動かすために、次の最低ハードウェア要件が推奨されます。
 
-- メモリ：8 GB RAM（最小）
-- CPU：6コア
-- ディスク：500 GB SSDストレージ
-- 帯域幅：ダウンロード1 Gbps / アップロード1 Gbps
+- メモリ: 8 GB RAM（最小）
+- CPU: 6 コア
+- ディスク: 500 GB SSD ストレージ
+- 帯域幅: ダウンロード 1 Gbps / アップロード 1 Gbps
 
 ## ノードの実行
 
-まず、[フルコンセンサスノードの設定](/run-a-sunrise-node/types/consensus/full-consensus-node)に関する指示に従ってください。
+まず、[フルコンセンサスノードのセットアップ](/run-a-sunrise-node/types/consensus/full-consensus-node) の手順に従ってください。
 
-### オプション：作業ディレクトリのリセット
+### オプション: 作業ディレクトリのリセット
 
-過去にsunrisedの作業ディレクトリを初期化したことがある場合は、新しいディレクトリを再初期化する前にクリーンアップする必要があります。次のコマンドを実行することでクリーンアップできます。
+過去に sunrised の作業ディレクトリを初期化したことがある場合は、新しいディレクトリを再初期化する前にクリーンアップする必要があります。次のコマンドで実行できます。
 
 ```bash
 sunrised tendermint unsafe-reset-all
@@ -36,7 +36,7 @@ MONIKER="validator-name"
 sunrised init "$MONIKER" --chain-id $CHAIN_ID
 ```
 
-[Github](https://github.com/sunriselayer/network)で現在のchain-idを確認してください。
+現在の chain-id は [Github](https://github.com/sunriselayer/network) を確認してください。
 
 ### 新しいキーの作成
 
@@ -47,7 +47,7 @@ sunrised keys add $VALIDATOR_WALLET --keyring-backend test
 
 ### バリデーターの公開鍵
 
-バリデーターを初期化する前に最後に必要なのは、ノードを最初に初期化したときに作成されたバリデーターの公開鍵を取得することです。バリデーターの公開鍵を取得するには、次のようにします。
+バリデーターを初期化する前に最後に必要なのは、ノードを最初に初期化したときに作られたバリデーター公開鍵です。バリデーターの pubkey を取得するには次を実行します。
 
 ```bash
 sunrised tendermint show-validator
@@ -56,9 +56,9 @@ sunrised tendermint show-validator
 
 ### バリデーターの作成
 
-バリデーターを作成するには、最低1 vRISEが必要です。vRISEは譲渡不可能なため、アカウントに残高がない場合は、流動性プールにポジションを作成してvRISEを獲得してください。
+バリデーターを作成するには、最低 1 vRISE が必要です。vRISE は譲渡できないため、アカウントに残高がない場合は、流動性プールにポジションを作って vRISE を獲得してください。
 
-まず、バリデーター設定ファイル[~/.sunrise/config/validator.json]を作成します。
+まず、バリデーター設定ファイル `~/.sunrise/config/validator.json` を作成します。
 
 ```json
 {
@@ -90,22 +90,36 @@ sunrised tx staking create-validator [path/to/validator.json] \
 
 ## バックアップ
 
-何らかの理由でバリデーターが損傷したり失われたりした場合に復元できるように、特定のファイルをバックアップする必要があります。`~/.sunrise/config/`にある以下のファイルを安全にバックアップしてください。
+何らかの理由でバリデーターが損傷したり失われたりした場合に復元できるよう、特定のファイルをバックアップする必要があります。`~/.sunrise/config/` にある次のファイルを安全にバックアップしてください。
 
 - `priv_validator_key.json`
 - `node_key.json`
 
-これらのファイルのバックアップは暗号化することをお勧めします。
+これらのファイルのバックアップは暗号化することを推奨します。
 
 ## バリデーターへの追加インセンティブ
 
-コアチームは、以下のサービスを提供するバリデーターにRISEを委任します。
+:::caution
+「バリデーターへの追加インセンティブ」の申請期間は 2025 年 10 月 15 日に終了しました。再開日は未定です。すでに chain-registry に登録し、要件を満たしているバリデーターへの委任は完了しています。
 
-- IBCリレーヤー
-  - チャネルごとに`100RISE`の委任
-- ノードスナップショット
-  - `10000RISE`の委任
-- REST APIエンドポイント
-  - `10000RISE`の委任
+プログラムの資金プールが枯渇したため、いま要件を満たしても（例: tx indexer を有効にする）追加委任の対象にはなりません。ご注意ください。
+:::
 
-参加を希望する場合は、Discordまたはその他の方法でチームに連絡してください。
+コアチームは、次のサービスを提供するバリデーターへ、より多くの RISE を委任します。
+
+### RPC / API / gRPC
+
+- **委任量:** 各サービス（RPC、API、gRPC）あたり 250,000 RISE。上限は合計 750,000 RISE です。
+- **条件:**
+  - エンドポイントを [chain-registry](https://github.com/cosmos/chain-registry/blob/master/sunrise/chain.json) へのプルリクエストで提出し、マージされること。
+  - トランザクション indexer と CORS が有効であること。
+
+### エクスプローラー
+
+- **委任量:** 25,000 RISE。
+- **条件:**
+  - エクスプローラーを [chain-registry](https://github.com/cosmos/chain-registry/blob/master/sunrise/chain.json) へのプルリクエストで提出し、マージされること。
+- **追加委任:**
+  - 公式の Sunrise サービス内でエクスプローラーが使われる場合、追加委任を行います。個別にご連絡します。
+
+参加人数に応じて、これらのインセンティブの内容は変わる場合があります。

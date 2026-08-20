@@ -1,0 +1,20 @@
+{
+	"heading.anchorLabel": "「{{title}}」セクションへのリンク",
+	"aside.note": "注記",
+	"tableOfContents.onThisPage": "このページの内容",
+	"sidebarNav.accessibleLabel": "サイドバー",
+	"builtWithStarlight.label": "Starlight で構築",
+	"expressiveCode.copyButtonCopied": "コピーしました",
+	"expressiveCode.copyButtonTooltip": "クリップボードにコピー",
+	"expressiveCode.terminalWindowFallbackTitle": "ターミナル",
+	"pagefind.clear_search": "クリア",
+	"pagefind.load_more": "さらに結果を読み込む",
+	"pagefind.search_label": "このサイトを検索",
+	"pagefind.filters_label": "フィルター",
+	"pagefind.zero_results": "[SEARCH_TERM] の検索結果はありません",
+	"pagefind.many_results": "[SEARCH_TERM] の検索結果 [COUNT] 件",
+	"pagefind.one_result": "[SEARCH_TERM] の検索結果 [COUNT] 件",
+	"pagefind.alt_search": "[SEARCH_TERM] の検索結果はありません。[DIFFERENT_TERM] の結果を表示しています",
+	"pagefind.search_suggestion": "[SEARCH_TERM] の検索結果はありません。次の検索を試してください:",
+	"pagefind.searching": "[SEARCH_TERM] を検索しています..."
+}
