@@ -33,10 +33,10 @@ description: "重要: これはテストネットです。このネットワー�
 
 [リリース済みバイナリ](https://github.com/sunriselayer/sunrise/releases)
 
-### Dawnテストネットのフォーセット
+### Dawnテストネットの Faucet
 
-RISEとUSDriseのフォーセットはDawnテストネットで利用可能です。
-このフォーセットはDawn APP内で提供されています。
+RISE と USDrise の Faucet は Dawn テストネットで利用できます。
+この Faucet は Dawn APP 内で提供されています。
 
 使用するには、イーサリアムメインネットに少なくとも0.01 ETHを持つウォレットで署名する必要があります。費用はかかりません。
 
@@ -54,7 +54,7 @@ sunrised tx wasm execute sunrise1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjn
 
 ### DawnテストネットのIBC設定
 
-| Dstチェーン | Dstポート | Dstチャネル | Srcチェーン | Srcポート | Srcチャネル |
+| 宛先チェーン | 宛先ポート | 宛先チャネル | 送信元チェーン | 送信元ポート | 送信元チャネル |
 | ---------- | ---------- | ------------- | --------- | ---------- | ----------- |
 | `grand-1` | `transfer` | `channel-554` | `dawn-1` | `transfer` | `channel-0` |
 | `provider` | `transfer` | `channel-493` | `dawn-1` | `transfer` | `channel-1` |
@@ -65,9 +65,9 @@ sunrised tx wasm execute sunrise1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjn
 `provider`は現在のCosmosHubテストネット[Cosmos ICS Provider Testnet](https://hub.cosmos.network/main/hub-tutorials/join-testnet)です。
 [provider chain-registry](https://github.com/cosmos/chain-registry/tree/master/testnets/cosmosicsprovidertestnet)
 
-## DawnテストネットのIBC Denom
+## Dawnテストネットの IBC デノム
 
-| 名前 | チェーン | オリジナルDenom | IBC denom |
+| 名前 | チェーン | オリジナルデノム | IBC デノム |
 | ---- | ---------- | -------------- | ---------------------------------------------------------------------- |
 | USDN | `grand-1` | `uusdn` | `ibc/A7AD825A4B48DDA0138D118655E60100D22A4D690C45B95221520B58C9A64B63` |
 | USDC | `grand-1` | `uusdc` | `ibc/8E27BA2D5493AF5636760E354E46004562C46AB7EC0CC4C1CA14E9E20E2545B5` |

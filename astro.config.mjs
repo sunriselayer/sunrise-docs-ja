@@ -7,14 +7,19 @@ import starlightLlmsTxt from 'starlight-llms-txt';
 import mermaid from 'astro-mermaid';
 import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
+import { unified } from '@astrojs/markdown-remark';
 import { sidebar } from './src/sidebar.mjs';
 
 export default defineConfig({
 	site: 'https://ja.docs.sunriselayer.io',
 	trailingSlash: 'never',
+	// Astro 7 defaults to Sätteri, which does not run remark/rehype plugins.
+	// Opt into unified so remark-math + rehype-katex render $$ formulas.
 	markdown: {
-		remarkPlugins: [remarkMath],
-		rehypePlugins: [rehypeKatex],
+		processor: unified({
+			remarkPlugins: [remarkMath],
+			rehypePlugins: [rehypeKatex],
+		}),
 	},
 	integrations: [
 		mermaid({

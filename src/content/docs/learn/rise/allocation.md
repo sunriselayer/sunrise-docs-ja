@@ -1,5 +1,5 @@
 ---
-title: 割り当て
+title: アロケーション
 description: 一部はジェネシスでRISEに変換されます。
 ---
 

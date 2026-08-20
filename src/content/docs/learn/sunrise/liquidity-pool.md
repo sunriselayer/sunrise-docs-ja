@@ -39,13 +39,13 @@ description: x/liquiditypoolモジュールは、Sunriseブロックチェーン
 ティックシステムは、価格比率の式に基づいています。
 
 $$
-\mathrm{価格}(\mathrm{ティック}) = \mathrm{価格比率}^{\mathrm{ティック} - \mathrm{ベースオフセット}}
+\mathrm{price}(\mathrm{tick}) = \mathrm{price\_ratio}^{\mathrm{tick} - \mathrm{base\_offset}}
 $$
 
-`価格比率 = 1.0001`および`ベースオフセット = 0`の一般的なケースでは：
+一般的なケース（`price_ratio = 1.0001`、`base_offset = 0`）では：
 
 $$
-\mathrm{価格}(\mathrm{ティック}) = 1.0001^{\mathrm{ティック}}
+\mathrm{price}(\mathrm{tick}) = 1.0001^{\mathrm{tick}}
 $$
 
 これにより、特定の価格範囲内に流動性を正確に配置できます。

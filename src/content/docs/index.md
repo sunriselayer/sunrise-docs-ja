@@ -1,42 +1,75 @@
 ---
 title: 👋 Sunrise
-description: ドキュメントは現在作成中であり、定期的に更新されています。最新の情報については、後日再度ご確認ください。
+description: Interliquid Networks のベースレイヤー。
 ---
 
-**ドキュメントは現在作成中であり、定期的に更新されています。最新の情報については、後日再度ご確認ください。**
+**Interliquid Networks のベースレイヤー。**
 
-Sunriseは、開発者がセキュリティと流動性を強化されたロールアップ/アプリを構築できるようにすることで、モジュラーパラダイムをサポートするProof of LiquidityとFee Abstractionに特化したデータ可用性（DA）レイヤーです。
-SunriseはBerachainのProof of Liquidity（PoL）モデルをロールアップとL2に拡張し、RollkitとOP Stackと互換性のある柔軟なモジュラーデザインを特徴としています。GluonはSunrise L1ブロックチェーン上にSovereign Rollup（L2）としてデプロイされ、オーダーブック形式の取引プラットフォームとして機能します。これはWeb2のようなユーザー認証、オンチェーン決済を備えたオフチェーンの注文マッチングエンジン、そしてIBCベースの入出金機能を特徴としています。GluonとSunriseは直接通信し、既存のAltDAプロバイダーよりも純価値抽出の少ないスケーリングソリューションを可能にするため、blobspaceと引き換えに流動性の提供（PoLの複製）を可能にします。Sunrise上のPoLは、ロールアップとSunrise両方のセキュリティと流動性を相互に高め、Berachainで見られるPoLと並行したフライホイール効果をもたらします。
+Sunrise は、高スループットなデータ可用性とネイティブな流動性ハブを組み合わせた次世代 Layer 1 ブロックチェーンです。**Proof of Liquidity（PoL）** と **手数料抽象化** を統合し、ロールアップおよびアプリチェーンに対して即時の流動性と柔軟なガス支払い手段を提供します。バリデーターは RISE および／または vRISE をステークしてネットワークを保護します。流動性提供者はプールに流動性を供給し、vRISE と取引手数料を獲得します。Sunrise は [ロールアップおよび L2 ブロックチェーン](/build/l2-blockchains) と連携し、開発者は少ない統合コストで Sunrise を採用できます。
 
-## Sunrise の機能
+:::caution
+機能の要望やアイデアがある場合は、[GitHub Discussions](https://github.com/orgs/sunriselayer/discussions) でスレッドを開いてください。
+:::
 
-- Proof of Liquidity（PoL）
-- DA Fee Abstraction（DA 手数料抽象化）
-- Off Chain Blob Data Availability（オフチェーンによる Blob Data の公開検証性）
+## 主な特徴
 
-## Proof of Liquidity x Data Availability
+| 機能 | 説明 |
+| ---- | ---- |
+| **Proof of Liquidity（PoL）** | バリデーターは RISE および／または vRISE をステークしてネットワークを保護し、セキュリティと流動性を同時に揃えます。流動性提供者は vRISE と取引手数料を獲得します。 |
+| **手数料抽象化** | 任意のトークンでガスを支払えます。Sunrise は内部でごく一部を RISE にスワップします。ガス用に複数のトークンを持つ必要はありません。 |
+| **オフチェーンデータ可用性** | 大きなデータ blob はオフチェーンで伝播・保存し、オンチェーンにはイレージャーコーディング済みデータシェアを指すメタデータ URI のみを残します。高スループットなロールアップ向けに最適化されています。 |
 
-SunriseはProof of Liquidityを活用してDA体験を向上させながら、Sunrise上のL2とSunrise L1自体の流動性と主権性を高める相互に有益な環境を提供します。
-Sunriseは、純粋に利他的または自発的な貢献に依存するのではなく、主にProof of Liquidity（PoL）モデルを通じてデータ可用性（DA）ネットワークにインセンティブを与えます。実際には、特定のホワイトリストされたプールに流動性を提供するユーザーまたは開発者は、その見返りとしてデータを公開する権利（すなわちblobspace）を受け取ります。これにより、DA手数料は単一のネイティブトークンで支払われる方式から、参加者が資産をロックしてblobspaceを獲得するというより柔軟な仕組みへと変化します。流動性提供者は経済的恩恵を受けるため、信頼性の高い安全なデータ可用性を維持することに直接的な利害関係を持ち、ネットワーク全体でインセンティブが調整されます。この機能と任意の長期的なデータ可用性へのインセンティブにより、開発者はスケーラブルなL2を構築するだけでなく、AI、ゲームなどの新しい完全オンチェーン技術も探索できるようになります。
+## 高速なデータ可用性
 
-## 開発者が Sunrise を使用すべき理由
+Sunrise のオフチェーンデータ可用性設計は、オンチェーンのセキュリティを犠牲にせず、高いスループットとコスト効率を実現します。
 
-- ユーザーはDA手数料を必要とせず、流動性提供だけでSunrise DAを利用できます
-- 多数のDEXが既に存在していますが、トークン発行者に対する差別化は限られています。L2開発者はSunriseの存在にかかわらず、常に流動性を提供する必要があります。一方、SunriseのDEXに流動性を提供することで、トークン発行者はSunriseのDAを通じて追加のユーティリティにアクセスでき、同等の利点を持たない他のDAレイヤーやDEXよりもSunriseを選択する動機となります
+1. **オフチェーンのイレージャーコーディング**\
+   → バリデーターの計算とストレージを大幅に削減します。オンチェーンに残るのはコード化されたシャードだけで、完全なデータ再構成はオフチェーンで行われます。
+2. **オフチェーンの blob 伝播**\
+   → メモリプールを軽量に保ち、**5 MB/s 以上**までスケールします。バリデーターは可用性をサンプリングし、ノードは必要に応じて blob を取得または削除します。
+3. **KZG コミットメント**\
+   → オンチェーンの暗号学的アンカーにより、サブ秒での証明検証と即座のチャレンジ解決が可能になります。
 
-## Modules
+## データ可用性の機能
 
-- `x/da` モジュール
-- `x/tokenconverter` モジュール
-- `x/liquiditypool` モジュール
-- `x/liquidityincentive` モジュール
-- `x/swap` モジュール
-- `x/fee` モジュール
+Sunrise は重いデータ処理をオフチェーンに移し、オンチェーンの証明は小さく検証可能なままにします。
 
-### 収益（手数料構造）
+1. **オフチェーンのイレージャーエンコーディング**\
+   バリデーターの計算とストレージを大幅に削減します。オンチェーンに残るのはイレージャーコーディング済みデータシェアを指すメタデータ URI のみで、完全なデータ再構成はオフチェーンで行われます。
+2. **オフチェーンストレージ連携**\
+   IPFS や Arweave などの分散ストレージを利用してデータシャードを外部保存します。`MsgPublishData` にはイレージャーコーディング済みデータシェアを指すメタデータ URI だけが含まれ、blob トランザクションのオンチェーンブロックサイズ要件を下げ、スケーラビリティを高めます。
 
-プロトコルは 3 つの異なる収益源を通じて収益を生み出します。
+詳細は [データ可用性](/learn/sunrise/data-availability) を参照してください。
 
-- Transaction fees（トランザクション手数料）
-- Swap fees in the liquidity pool（流動性プールでのスワップ手数料）
-- MEV captured with [Skip Protocol](https://docs.skip.money/)（Skip Protocol を使用して捕捉される MEV（Miner Extractable Value））
+## Sunrise 上で構築する理由
+
+1. **ガスレスなオンボーディング** – 専用のガストークンは不要です。プロジェクトのトークンで支払えます。
+2. **即時の流動性** – 流動性を提供し、vRISE のゲージ報酬と取引手数料を獲得できます。
+3. **Rollkit / OP Stack 対応** – ソブリンロールアップにも Ethereum 決済のロールアップにも、そのまま使えるアダプターがあります。
+
+## コアモジュール
+
+| モジュール | 目的 |
+| --------- | ---- |
+| [`x/da`](/learn/sunrise/data-availability) | データ可用性レイヤーでのデータ公開と証明 |
+| [`x/liquiditypool`](/learn/sunrise/liquidity-pool) | PoL プールと流動性提供 |
+| [`x/liquidityincentive`](/learn/sunrise/liquidity-incentive) | vRISE 割り当てのためのゲージ投票とブライブ |
+| [`x/swap`](/learn/sunrise/swap) | トークンスワップを行う AMM ルーター |
+| [`x/tokenconverter`](/learn/sunrise/token-converter) | vRISE から RISE への変換 |
+| [`x/fee`](/learn/sunrise/fee) | 手数料抽象化と収益の分配 |
+| [`x/lockup`](/learn/sunrise/lockup) | 一定期間の RISE ロック |
+| [`x/shareclass`](/learn/sunrise/shareclass) | ネットワーク保護のための RISE ステーキング |
+
+## 収益源
+
+* **トランザクション手数料** – トランザクション送信時に RISE で支払われます
+* **スワップ手数料** – 流動性提供者に支払われます
+
+## 次のステップ
+
+| 操作 | リンク |
+| ---- | ------ |
+| **ノードの導入** | [ノードセットアップガイド](/run-a-sunrise-node/types/consensus) |
+| **ロールアップの起動** | [Rollkit ガイド](/build/l2-blockchains/rollkit) |
+| **バリデーターになる** | [バリデーターガイド](/build/validators) |
+| **Discord に参加する** | [Discord コミュニティ](https://discord.gg/sunriselayer) |

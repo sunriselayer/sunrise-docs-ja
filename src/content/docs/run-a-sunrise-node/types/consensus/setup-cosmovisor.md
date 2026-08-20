@@ -1,5 +1,5 @@
 ---
-title: Cosmovisorの設定
+title: Cosmovisorのセットアップ
 description: メインネットでは、ノードの実行にCosmovisorを使用することをお勧めします。
 ---
 
