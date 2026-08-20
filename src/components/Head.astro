@@ -1,0 +1,85 @@
+---
+// Open Graph, Twitter, hreflang, and JSON-LD so link previews and language
+// indexing match the former GitBook sites (cover image + EN/JA alternates).
+import Default from '@astrojs/starlight/components/Head.astro';
+
+const EN_ORIGIN = 'https://docs.sunriselayer.io';
+const JA_ORIGIN = 'https://ja.docs.sunriselayer.io';
+const SITE_TITLE = 'Sunrise Docs';
+
+const { entry, id, lang, head } = Astro.locals.starlightRoute;
+const title = entry.data.title;
+const description = entry.data.description;
+const ogTitle = `${title} | ${SITE_TITLE}`;
+
+const siteOrigin = Astro.site ? String(Astro.site).replace(/\/$/, '') : Astro.url.origin;
+const path = Astro.url.pathname === '/' ? '' : Astro.url.pathname.replace(/\/$/, '');
+const canonical = `${siteOrigin}${path}`;
+const enUrl = `${EN_ORIGIN}${path}`;
+const jaUrl = `${JA_ORIGIN}${path}`;
+const vercelHost = import.meta.env.VERCEL_URL;
+const assetOrigin =
+	import.meta.env.VERCEL_ENV === 'preview' && vercelHost ? `https://${vercelHost}` : siteOrigin;
+const ogImage = `${assetOrigin}/og.png`;
+const is404 = id === '404';
+const otherLocale = lang === 'ja' ? 'en' : 'ja';
+
+for (const tag of head) {
+	if (tag.tag === 'meta' && tag.attrs?.property === 'og:title') {
+		tag.attrs.content = ogTitle;
+	}
+}
+
+const jsonLd = JSON.stringify({
+	'@context': 'https://schema.org',
+	'@graph': [
+		{
+			'@type': 'WebSite',
+			name: SITE_TITLE,
+			url: siteOrigin,
+			inLanguage: lang,
+		},
+		{
+			'@type': 'TechArticle',
+			headline: title,
+			description,
+			url: canonical,
+			image: ogImage,
+			inLanguage: lang,
+			isPartOf: { '@type': 'WebSite', url: siteOrigin, name: SITE_TITLE },
+			publisher: {
+				'@type': 'Organization',
+				name: 'Sunrise',
+				url: 'https://sunriselayer.io',
+			},
+		},
+	],
+});
+---
+
+<Default>
+	<slot />
+</Default>
+{
+	!is404 && (
+		<>
+			<link rel="alternate" hreflang="en" href={enUrl} />
+			<link rel="alternate" hreflang="ja" href={jaUrl} />
+			<link rel="alternate" hreflang="x-default" href={enUrl} />
+			<meta property="og:locale:alternate" content={otherLocale} />
+		</>
+	)
+}
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Sunrise" />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content="Sunrise" />
+<meta name="twitter:title" content={ogTitle} />
+{description && <meta name="twitter:description" content={description} />}
+<meta name="theme-color" content="#6495ed" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+{!is404 && <script type="application/ld+json" is:inline set:html={jsonLd} />}
