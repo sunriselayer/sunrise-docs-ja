@@ -1,0 +1,53 @@
+/* Sunrise Docs theme.
+ * Accents match the Sunrise brand kit: cornflower blue #6495ed and gold #edbc64.
+ */
+
+@import 'katex/dist/katex.min.css';
+
+:root {
+	--sl-color-accent-low: #dbe7fb;
+	--sl-color-accent: #6495ed;
+	--sl-color-accent-high: #2f5db8;
+	--sl-color-text-accent: #2f5db8;
+	--sunrise-gold: #edbc64;
+}
+
+:root[data-theme='dark'] {
+	--sl-color-accent-low: #1a2a4a;
+	--sl-color-accent: #7aa6f5;
+	--sl-color-accent-high: #dbe7fb;
+	--sl-color-text-accent: #7aa6f5;
+}
+
+.site-title img {
+	height: 1.75rem;
+	width: auto;
+}
+
+.sl-markdown-content table {
+	font-size: 0.9rem;
+}
+
+.sl-markdown-content pre {
+	font-size: 0.85rem;
+}
+
+.sl-markdown-content img[src^='/images/'] {
+	height: 1.15em;
+	width: auto;
+	display: inline;
+	vertical-align: text-bottom;
+}
+
+.language-switch {
+	font-size: var(--sl-text-sm);
+	font-weight: 600;
+	color: var(--sl-color-text-accent);
+	text-decoration: none;
+	margin-inline-end: 0.75rem;
+	white-space: nowrap;
+}
+
+.language-switch:hover {
+	color: var(--sunrise-gold);
+}

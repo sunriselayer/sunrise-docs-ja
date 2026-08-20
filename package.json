@@ -1,0 +1,26 @@
+{
+  "name": "sunrise-docs-ja",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Sunrise documentation (ja.docs.sunriselayer.io)",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.41.5",
+    "astro": "^7.0.2",
+    "astro-mermaid": "^2.1.0",
+    "katex": "^0.16.22",
+    "rehype-katex": "^7.0.1",
+    "remark-math": "^6.0.0",
+    "sharp": "^0.34.5",
+    "starlight-llms-txt": "^0.11.0"
+  }
+}
