@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ja.docs.sunriselayer.io/sitemap-index.xml

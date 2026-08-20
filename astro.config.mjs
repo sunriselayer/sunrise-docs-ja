@@ -28,6 +28,7 @@ export default defineConfig({
 		}),
 		starlight({
 			title: 'Sunrise Docs',
+			description: 'Interliquid Networks のベースレイヤー。',
 			defaultLocale: 'root',
 			locales: {
 				root: {
@@ -61,6 +62,7 @@ export default defineConfig({
 			],
 			customCss: ['./src/styles/custom.css'],
 			components: {
+				Head: './src/components/Head.astro',
 				PageTitle: './src/components/PageTitle.astro',
 				SocialIcons: './src/components/SocialIcons.astro',
 			},
