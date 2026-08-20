@@ -1,25 +1,56 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "astro",
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "installCommand": "npm install",
-  "trailingSlash": false,
-  "redirects": [
-    {
-      "source": "/home",
-      "destination": "/",
-      "statusCode": 308
-    },
-    {
-      "source": "/home/readme",
-      "destination": "/",
-      "statusCode": 308
-    },
-    {
-      "source": "/:path(.*).md",
-      "destination": "/:path",
-      "statusCode": 308
-    }
-  ]
+	"$schema": "https://openapi.vercel.sh/vercel.json",
+	"framework": "astro",
+	"buildCommand": "npm run build",
+	"outputDirectory": "dist",
+	"installCommand": "npm install",
+	"trailingSlash": false,
+	"redirects": [
+		{
+			"source": "/home",
+			"destination": "/",
+			"statusCode": 308
+		},
+		{
+			"source": "/home/readme",
+			"destination": "/",
+			"statusCode": 308
+		},
+		{
+			"source": "/sitemap.xml",
+			"destination": "/sitemap-index.xml",
+			"statusCode": 308
+		},
+		{
+			"source": "/learn/sunrise/gauges-voting",
+			"destination": "/learn/sunrise/liquidity-incentive/gauges-voting",
+			"statusCode": 308
+		},
+		{
+			"source": "/learn/sunrise/gauges-voting.md",
+			"destination": "/learn/sunrise/liquidity-incentive/gauges-voting.md",
+			"statusCode": 308
+		},
+		{
+			"source": "/learn/sunrise/bribes",
+			"destination": "/learn/sunrise/liquidity-incentive/bribes",
+			"statusCode": 308
+		},
+		{
+			"source": "/learn/sunrise/bribes.md",
+			"destination": "/learn/sunrise/liquidity-incentive/bribes.md",
+			"statusCode": 308
+		}
+	],
+	"headers": [
+		{
+			"source": "/:path(.*).md",
+			"headers": [
+				{
+					"key": "Content-Type",
+					"value": "text/markdown; charset=utf-8"
+				}
+			]
+		}
+	]
 }
