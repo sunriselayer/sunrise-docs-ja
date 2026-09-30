@@ -60,6 +60,10 @@ export default defineConfig({
 					href: 'https://twitter.com/SunriseLayer',
 				},
 			],
+			banner: {
+				content:
+					'Cosmos Sunrise は 2026年10月5日 12:00 UTC に終了します（v2.0.0、ブロック高 6,504,000）。保有資産は Sunrise Edge に引き継がれます。終了前に資金を移動する必要はありません。<a href="https://sunriselayer.io/">詳細</a>',
+			},
 			customCss: ['./src/styles/custom.css'],
 			components: {
 				Head: './src/components/Head.astro',
