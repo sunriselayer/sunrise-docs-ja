@@ -3,6 +3,12 @@ title: 👋 Sunrise
 description: Interliquid Networks のベースレイヤー。
 ---
 
+:::danger
+Cosmos Sunrise は **2026年10月5日 12:00 UTC**、v2.0.0 アップグレード（ブロック高 **6,504,000**）で終了します。ネットワーク、アプリ、エクスプローラーは停止します。このネットワーク上の保有資産は Sunrise Edge に引き継がれます。終了前に資金を移動したり、現行アプリを操作したりする必要はありません。
+
+詳細は [Sunrise Edge](https://sunriselayer.io/) を参照してください。終了までは以前のサイトが [cosmos.sunriselayer.io](https://cosmos.sunriselayer.io/) で見られます。
+:::
+
 **Interliquid Networks のベースレイヤー。**
 
 Sunrise は、高スループットなデータ可用性とネイティブな流動性ハブを組み合わせた次世代 Layer 1 ブロックチェーンです。**Proof of Liquidity（PoL）** と **手数料抽象化** を統合し、ロールアップおよびアプリチェーンに対して即時の流動性と柔軟なガス支払い手段を提供します。バリデーターは RISE および／または vRISE をステークしてネットワークを保護します。流動性提供者はプールに流動性を供給し、vRISE と取引手数料を獲得します。Sunrise は [ロールアップおよび L2 ブロックチェーン](/build/l2-blockchains) と連携し、開発者は少ない統合コストで Sunrise を採用できます。

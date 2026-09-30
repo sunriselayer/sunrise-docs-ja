@@ -3,6 +3,12 @@ title: Sunriseメインネット
 description: Sunrise のメインネットワークです。実価値のあるトークンを使います。
 ---
 
+:::danger
+Cosmos Sunrise のメインネットは **2026年10月5日 12:00 UTC**、v2.0.0 アップグレード（ブロック高 **6,504,000**）で終了します。保有資産は Sunrise Edge に引き継がれます。終了前に資金を移動する必要はありません。
+
+詳細: [Sunrise Edge](https://sunriselayer.io/)
+:::
+
 Sunrise のメインネットワークです。実価値のあるトークンを使います。
 
 ## メインネットの詳細
